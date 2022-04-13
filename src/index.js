@@ -399,12 +399,12 @@ class AvatarEditor extends React.Component {
     // don't paint a border here, as it is the resulting image
     this.paintImage(canvas.getContext('2d'), this.state.image, 0, 1)
     // don't paint a border here, as it is the resulting image
-    this.paintImage(context, this.state.image, 0, 1)
+    this.paintImage(canvas.getContext('2d'), this.state.image, 0, 1)
 
     // Draw white background/rectangle on entire canvas
-    context.globalCompositeOperation = "destination-over";
-    context.fillStyle = "#FFFFFF";
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    canvas.getContext('2d').globalCompositeOperation = "destination-over";
+    canvas.getContext('2d').fillStyle = "#FFFFFF";
+    canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
     return canvas
   }
 
